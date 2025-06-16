@@ -37,6 +37,9 @@ jobs:
       - name: List dependencies
         run: npm --loglevel debug list
 
+      - name: Setup Playwright
+        run: npx playwright install
+
       - name: Run prettier check
         run: npm run prettier:check
 
