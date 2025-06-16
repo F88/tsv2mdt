@@ -109,6 +109,8 @@ pkg/
 
 ## Test ##
 /coverage/
+test-results/
+test-report.junit.xml
 
 ## Documentation ##
 # docs/
