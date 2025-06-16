@@ -27,16 +27,9 @@ if (import.meta.env.DEV) {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Analytics and get a reference to the service
-// const analytics = getAnalytics(app);
-getAnalytics(app);
+const analytics = getAnalytics(app);
 
 // Initialize Performance Monitoring and get a reference to the service
-// const perf = getPerformance(app);
-getPerformance(app);
+const perf = getPerformance(app);
 
-export {
-  firebaseConfig,
-  app,
-  // analytics,
-  // perf,
-};
+export { firebaseConfig, app, analytics, perf };
