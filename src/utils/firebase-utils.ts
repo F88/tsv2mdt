@@ -1,4 +1,6 @@
+import { getAnalytics } from 'firebase/analytics';
 import { initializeApp, type FirebaseOptions } from 'firebase/app';
+import { getPerformance } from 'firebase/performance';
 
 function requireEnv(key: string): string {
   const value = import.meta.env[key] as string | undefined;
@@ -21,6 +23,13 @@ if (import.meta.env.DEV) {
   console.debug('Firebase Config - Project ID:', firebaseConfig.projectId);
 }
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export { app, firebaseConfig };
+// Initialize Analytics and get a reference to the service
+const analytics = getAnalytics(app);
+
+// Initialize Performance Monitoring and get a reference to the service
+const perf = getPerformance(app);
+
+export { firebaseConfig, app, analytics, perf };
