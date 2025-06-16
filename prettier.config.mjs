@@ -9,6 +9,15 @@ const config = {
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
+  overrides: [
+    {
+      files: '*.md',
+      options: {
+        tabWidth: 4,
+        useTabs: false,
+      },
+    },
+  ]
 };
 
 export default config;
