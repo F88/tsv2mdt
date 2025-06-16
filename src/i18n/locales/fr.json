@@ -1,0 +1,50 @@
+{
+  "languageButton": {
+    "switchToEnglish": "Passer à l'anglais",
+    "switchToFrench": "Passer au français",
+    "switchToJapanese": "Passer au japonais"
+  },
+  "themeButton": {
+    "light": "Passer au thème clair",
+    "dark": "Passer au thème sombre",
+    "auto": "Suivre le thème du système"
+  },
+  "title": "TSV to Markdown Table",
+  "subtitle": "Subtitle",
+  "description": "Collez les données TSV pour les convertir au format de tableau Markdown",
+  "usage": "💡 Coller les cellules copiées à partir d'une feuille de calcul",
+  "loadSample": "Exemples de données",
+  "clearAll": "Effacer",
+  "tsvInput": "TSV",
+  "tsvPlaceholder": "Collez ici vos données TSV\n(données séparées par des tabulations)\n\nExemple :\nNom\tÂge\tProfession\nTanaka\t30\tIngénieur",
+  "markdownOutput": "Tableau Markdown",
+  "htmlPreview": "Aperçu HTML",
+  "errors": {
+    "markdownGenerationFailed": "Échec de la génération du tableau Markdown. Veuillez vérifier le format des données."
+  },
+  "dataSummary": {
+    "title": "Résumé",
+    "columns": "Colonnes",
+    "rows": "Lignes",
+    "characters": "Caractères",
+    "sizeKB": "Taille"
+  },
+  "markdownSummary": {
+    "title": "Résumé",
+    "columns": "Colonnes",
+    "rows": "Lignes",
+    "characters": "Caractères",
+    "sizeKB": "Taille"
+  },
+  "copyButton": {
+    "copy": "Copier",
+    "copied": "Copié"
+  },
+  "performanceMetrics": {
+    "title": "Métriques de performance",
+    "tsvParsingTime": "Temps d'analyse TSV",
+    "markdownGenerationTime": "Temps de génération Markdown",
+    "totalConversionTime": "Temps de conversion total",
+    "processingRate": "Taux de traitement"
+  }
+}

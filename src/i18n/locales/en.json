@@ -1,0 +1,50 @@
+{
+  "languageButton": {
+    "switchToEnglish": "Switch language to English",
+    "switchToFrench": "Switch language to French",
+    "switchToJapanese": "Switch language to Japanese"
+  },
+  "themeButton": {
+    "light": "Switch theme to light theme",
+    "dark": "Switch theme to dark theme",
+    "auto": "Switch themes Follow system settings"
+  },
+  "title": "TSV to Markdown Table",
+  "subtitle": "Subtitle",
+  "description": "Paste TSV and convert it to Markdown table format",
+  "usage": "💡 Paste cells copied from a spreadsheet",
+  "loadSample": "Sample data",
+  "clearAll": "Clear",
+  "tsvInput": "TSV",
+  "tsvPlaceholder": "Paste your TSV data here\n(Tab-separated data)\n\nExample:\nName\tAge\tJob title\nTanaka\t30\tEngineer",
+  "markdownOutput": "Markdown Table",
+  "htmlPreview": "HTML Preview",
+  "errors": {
+    "markdownGenerationFailed": "Failed to generate markdown table. Please check your data format."
+  },
+  "dataSummary": {
+    "title": "Summary",
+    "columns": "Columns",
+    "rows": "Rows",
+    "characters": "Characters",
+    "sizeKB": "Size"
+  },
+  "markdownSummary": {
+    "title": "Summary",
+    "columns": "Columns",
+    "rows": "Rows",
+    "characters": "Characters",
+    "sizeKB": "Size"
+  },
+  "copyButton": {
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "performanceMetrics": {
+    "title": "Performance Metrics",
+    "tsvParsingTime": "TSV Parsing Time",
+    "markdownGenerationTime": "Markdown Generation Time",
+    "totalConversionTime": "Total Conversion Time",
+    "processingRate": "Processing Rate"
+  }
+}
