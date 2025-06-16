@@ -4,7 +4,6 @@
 [![Deploy to Firebase Hosting on merge](https://github.com/F88/tsv2mdt/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/F88/tsv2mdt/actions/workflows/firebase-hosting-merge.yml)
 [![codecov](https://codecov.io/gh/F88/tsv2mdt/graph/badge.svg?token=LE663ATRLR)](https://codecov.io/gh/F88/tsv2mdt)
 
-
 Web app for converting TSV to Markdown Table.
 
 ## What is TSV?
