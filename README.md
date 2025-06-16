@@ -15,4 +15,4 @@ Web app for converting TSV to Markdown Table.
 Markdown table specifications
 
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
-  - [4.10Tables (extension)](https://github.github.com/gfm/#tables-extension-)
+    - [4.10Tables (extension)](https://github.github.com/gfm/#tables-extension-)
