@@ -42,8 +42,11 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      - name: Run tests for Codecov Test Analytics
-        run: npm run test:codecov
+      - name: Run tests
+        run: npm run test
+
+      # - name: Run tests for Codecov Test Analytics
+      #   run: npm run test:codecov
 
       # - name: Upload test results to Codecov
       #   if: ${{ !cancelled() }}
