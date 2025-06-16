@@ -1,0 +1,50 @@
+{
+  "languageButton": {
+    "switchToEnglish": "英語に切り替え",
+    "switchToFrench": "フランス語に切り替え",
+    "switchToJapanese": "日本語に切り替え"
+  },
+  "themeButton": {
+    "light": "ライトテーマに切り替え",
+    "dark": "ダークテーマに切り替え",
+    "auto": "システムテーマに従う"
+  },
+  "title": "TSV to Markdown Table",
+  "subtitle": "副題",
+  "description": "TSVデータを貼り付けて、Markdownテーブル形式に変換します",
+  "usage": "💡 スプレッドシートのセルをコピーして貼り付ける",
+  "loadSample": "サンプルデータ",
+  "clearAll": "クリア",
+  "tsvInput": "TSV",
+  "tsvPlaceholder": "TSVデータをここに貼り付けてください\n(タブ区切りのデータ)\n\n例:\n名前\t年齢\t職業\n田中\t30\tエンジニア",
+  "markdownOutput": "Markdown テーブル",
+  "htmlPreview": "HTML プレビュー",
+  "errors": {
+    "markdownGenerationFailed": "Markdownテーブルの生成に失敗しました。データ形式を確認してください。"
+  },
+  "dataSummary": {
+    "title": "概要",
+    "columns": "カラム",
+    "rows": "行",
+    "characters": "文字",
+    "sizeKB": "サイズ"
+  },
+  "markdownSummary": {
+    "title": "概要",
+    "columns": "カラム",
+    "rows": "行",
+    "characters": "文字",
+    "sizeKB": "サイズ"
+  },
+  "copyButton": {
+    "copy": "コピー",
+    "copied": "コピーしました"
+  },
+  "performanceMetrics": {
+    "title": "パフォーマンス指標",
+    "tsvParsingTime": "TSV解析時間",
+    "markdownGenerationTime": "Markdown生成時間",
+    "totalConversionTime": "総変換時間",
+    "processingRate": "処理速度"
+  }
+}
