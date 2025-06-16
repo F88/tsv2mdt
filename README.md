@@ -1,6 +1,8 @@
 # TSV to Markdown Table
 
 [![Node.js CI (npm)](https://github.com/F88/tsv2mdt/actions/workflows/nodejs-ci-npm.yml/badge.svg)](https://github.com/F88/tsv2mdt/actions/workflows/nodejs-ci-npm.yml)
+[![codecov](https://codecov.io/gh/F88/tsv2mdt/graph/badge.svg?token=LE663ATRLR)](https://codecov.io/gh/F88/tsv2mdt)
+
 
 Web app for converting TSV to Markdown Table.
 
