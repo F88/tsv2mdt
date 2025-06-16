@@ -10,7 +10,9 @@ Web app for converting TSV to Markdown Table.
 - [How To Use Tab Separated Value \(TSV\) files](https://www.imf.org/external/help/tsv.htm)
 - [TSV, Tab\-Separated Values](https://www.loc.gov/preservation/digital/formats/fdd/fdd000533.shtml)
 
-## ReferencesMarkdown table specifications
+## References
+
+Markdown table specifications
 
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
   - [4.10Tables (extension)](https://github.github.com/gfm/#tables-extension-)
