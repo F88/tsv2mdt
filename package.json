@@ -1,8 +1,24 @@
 {
   "name": "tsv2mdt",
-  "private": true,
+  "description": "Webapp for converting TSV files to Markdown tables.",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
+  "keywords": [
+    "typescript",
+    "tsv",
+    "markdown",
+    "converter",
+    "webapp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F88/tsv2mdt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/F88/tsv2mdt/issues"
+  },
+  "homepage": "https://github.com/F88/tsv2mdt-e2e#readme",
   "scripts": {
     "dev": "vite",
     "prettier:check": "prettier --check \"{src,test,scripts}/**/*.{js,json,mjs,ts,jsx,tsx}\" \"*.{md,json,ts}\"",
