@@ -19,17 +19,18 @@ const firebaseConfig: FirebaseOptions = {
 
 if (import.meta.env.DEV) {
   console.debug('Firebase Config:', firebaseConfig);
-  console.debug('Firebase Config : ', firebaseConfig);
   console.debug('Firebase Config - Project ID:', firebaseConfig.projectId);
 }
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// console.debug('Initializing Firebase...');
+const firebaseApp = initializeApp(firebaseConfig);
+// console.debug('Firebase initialized:', app.options.measurementId);
 
 // Initialize Analytics and get a reference to the service
-const analytics = getAnalytics(app);
+const analytics = getAnalytics(firebaseApp);
 
 // Initialize Performance Monitoring and get a reference to the service
-const perf = getPerformance(app);
+const perf = getPerformance(firebaseApp);
 
-export { firebaseConfig, app, analytics, perf };
+export { firebaseConfig, firebaseApp, analytics, perf };
