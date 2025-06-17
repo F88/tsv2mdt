@@ -7,7 +7,7 @@ export interface FirebaseContextType {
 }
 
 export const FirebaseContext = createContext<FirebaseContextType | undefined>({
-  app: Firebase.app,
+  app: Firebase.firebaseApp,
 });
 
 export const useFirebaseContext = () => {
