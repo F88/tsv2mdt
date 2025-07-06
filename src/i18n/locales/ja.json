@@ -40,6 +40,11 @@
     "copy": "コピー",
     "copied": "コピーしました"
   },
+  "columnAlignment": "列の整列",
+  "alignmentDefault": "デフォルト",
+  "alignmentLeft": "左寄せ",
+  "alignmentCenter": "中央寄せ",
+  "alignmentRight": "右寄せ",
   "performanceMetrics": {
     "title": "パフォーマンス指標",
     "tsvParsingTime": "TSV解析時間",

@@ -8,6 +8,7 @@ import { HtmlPreview } from '../components/preview/HtmlPreview.jsx';
 import { Tsv } from '../components/tsv/Tsv.jsx';
 import { TsvConverterHeader } from '../components/tsv/TsvConverterHeader.jsx';
 import { convertMarkdownTableToHtml } from '../utils/tsv-converter.js';
+import type { ColumnAlignment } from '../utils/table-utils.js';
 import { Actions } from './Actions.jsx';
 
 export function TsvConverterContainer() {
@@ -20,6 +21,7 @@ export function TsvConverterContainer() {
   });
   const [htmlOutput, setHtmlOutput] = useState('');
   const [markdown, setMarkdown] = useState('');
+  const [columnAlignments, setColumnAlignments] = useState<ColumnAlignment[]>([]);
 
   const handleTsvInputChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
@@ -32,6 +34,8 @@ export function TsvConverterContainer() {
     try {
       const tableData: MarkdownTable = parseTsv(tsvInput);
       setTableData(tableData);
+      // Reset column alignments when table structure changes
+      setColumnAlignments(new Array(tableData.header.length).fill(undefined));
     } catch (err) {
       console.error('Error parsing TSV data:', err);
       // Set empty table data on parse error
@@ -40,6 +44,7 @@ export function TsvConverterContainer() {
         data: [],
         delimiter: [],
       });
+      setColumnAlignments([]);
     }
   }, [tsvInput]);
 
@@ -63,6 +68,15 @@ export function TsvConverterContainer() {
     });
     setMarkdown('');
     setHtmlOutput('');
+    setColumnAlignments([]);
+  };
+
+  const handleAlignmentChange = (columnIndex: number, alignment: ColumnAlignment) => {
+    setColumnAlignments(prev => {
+      const newAlignments = [...prev];
+      newAlignments[columnIndex] = alignment;
+      return newAlignments;
+    });
   };
 
   const handleLoadSample = () => {
@@ -99,11 +113,12 @@ export function TsvConverterContainer() {
 
         <Markdown
           tableData={tableData}
-          customColumnAlignments={undefined}
+          customColumnAlignments={columnAlignments}
           handleUpdateMarkdownTable={(newMarkdown) => {
             setMarkdown(newMarkdown);
           }}
           markdownOutput={markdown}
+          onAlignmentChange={handleAlignmentChange}
         />
 
         {/*<PerformanceMetrics metrics={performanceMetrics} />*/}
