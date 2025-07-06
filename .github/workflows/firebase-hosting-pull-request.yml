@@ -9,13 +9,13 @@ permissions:
   pull-requests: write
 jobs:
   build_and_preview:
-    name: Build and Deploy to Firebase Hosting
+    name: Build and deploy to preview channel
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and Deploy to Firebase Hosting
+      - name: Build
         run: npm ci && npm run build
         env:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}

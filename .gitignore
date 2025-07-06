@@ -122,3 +122,4 @@ storybook-static
 
 ## Firebase
 .firebase/
+firebase-debug.log
