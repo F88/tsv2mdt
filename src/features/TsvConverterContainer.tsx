@@ -21,7 +21,9 @@ export function TsvConverterContainer() {
   });
   const [htmlOutput, setHtmlOutput] = useState('');
   const [markdown, setMarkdown] = useState('');
-  const [columnAlignments, setColumnAlignments] = useState<ColumnAlignment[]>([]);
+  const [columnAlignments, setColumnAlignments] = useState<ColumnAlignment[]>(
+    [],
+  );
 
   const handleTsvInputChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
@@ -71,8 +73,11 @@ export function TsvConverterContainer() {
     setColumnAlignments([]);
   };
 
-  const handleAlignmentChange = (columnIndex: number, alignment: ColumnAlignment) => {
-    setColumnAlignments(prev => {
+  const handleAlignmentChange = (
+    columnIndex: number,
+    alignment: ColumnAlignment,
+  ) => {
+    setColumnAlignments((prev) => {
       const newAlignments = [...prev];
       newAlignments[columnIndex] = alignment;
       return newAlignments;

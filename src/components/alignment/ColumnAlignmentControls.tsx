@@ -38,7 +38,7 @@ export function ColumnAlignmentControls({
       <Typography variant="h6" component="h3" gutterBottom>
         {t('columnAlignment')}
       </Typography>
-      
+
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         {columnNames.map((columnName, index) => (
           <FormControl key={index} size="small" fullWidth>
@@ -53,7 +53,9 @@ export function ColumnAlignmentControls({
               onChange={(event) =>
                 onAlignmentChange(
                   index,
-                  event.target.value === '' ? undefined : (event.target.value as ColumnAlignment),
+                  event.target.value === ''
+                    ? undefined
+                    : (event.target.value as ColumnAlignment),
                 )
               }
             >

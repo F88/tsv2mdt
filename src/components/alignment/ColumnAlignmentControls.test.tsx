@@ -16,7 +16,7 @@ describe('ColumnAlignmentControls', () => {
         columnNames={[]}
         alignments={[]}
         onAlignmentChange={mockOnAlignmentChange}
-      />
+      />,
     );
     expect(container.firstChild).toBeNull();
   });
@@ -27,7 +27,7 @@ describe('ColumnAlignmentControls', () => {
         columnNames={['Name', 'Age', 'Job']}
         alignments={['left', undefined, 'right']}
         onAlignmentChange={mockOnAlignmentChange}
-      />
+      />,
     );
 
     expect(screen.getByText('Column Alignment')).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe('ColumnAlignmentControls', () => {
         columnNames={['Name', 'Age']}
         alignments={[undefined, undefined]}
         onAlignmentChange={mockOnAlignmentChange}
-      />
+      />,
     );
 
     const firstSelect = screen.getByLabelText('Name');
@@ -60,12 +60,12 @@ describe('ColumnAlignmentControls', () => {
         columnNames={['Name', 'Age']}
         alignments={['left', 'center']}
         onAlignmentChange={mockOnAlignmentChange}
-      />
+      />,
     );
 
     const nameSelect = screen.getByDisplayValue('left');
     const ageSelect = screen.getByDisplayValue('center');
-    
+
     expect(nameSelect).toBeInTheDocument();
     expect(ageSelect).toBeInTheDocument();
   });

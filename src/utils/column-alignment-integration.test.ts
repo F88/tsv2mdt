@@ -11,10 +11,18 @@ describe('Column Alignment Integration', () => {
         ['John', '30', 'Engineer'],
         ['Jane', '25', 'Designer'],
       ],
-      delimiter: [{ alignment: undefined }, { alignment: undefined }, { alignment: undefined }],
+      delimiter: [
+        { alignment: undefined },
+        { alignment: undefined },
+        { alignment: undefined },
+      ],
     };
 
-    const customDelimiter = createDelimiterFromAlignments(['left', 'left', 'left']);
+    const customDelimiter = createDelimiterFromAlignments([
+      'left',
+      'left',
+      'left',
+    ]);
     const markdown = toTable(tableData, customDelimiter);
 
     expect(markdown).toContain('| :--- | :--- | :--- |');
@@ -27,10 +35,18 @@ describe('Column Alignment Integration', () => {
         ['John', '30', 'Engineer'],
         ['Jane', '25', 'Designer'],
       ],
-      delimiter: [{ alignment: undefined }, { alignment: undefined }, { alignment: undefined }],
+      delimiter: [
+        { alignment: undefined },
+        { alignment: undefined },
+        { alignment: undefined },
+      ],
     };
 
-    const customDelimiter = createDelimiterFromAlignments(['center', 'center', 'center']);
+    const customDelimiter = createDelimiterFromAlignments([
+      'center',
+      'center',
+      'center',
+    ]);
     const markdown = toTable(tableData, customDelimiter);
 
     expect(markdown).toContain('| :---: | :---: | :---: |');
@@ -43,10 +59,18 @@ describe('Column Alignment Integration', () => {
         ['John', '30', 'Engineer'],
         ['Jane', '25', 'Designer'],
       ],
-      delimiter: [{ alignment: undefined }, { alignment: undefined }, { alignment: undefined }],
+      delimiter: [
+        { alignment: undefined },
+        { alignment: undefined },
+        { alignment: undefined },
+      ],
     };
 
-    const customDelimiter = createDelimiterFromAlignments(['right', 'right', 'right']);
+    const customDelimiter = createDelimiterFromAlignments([
+      'right',
+      'right',
+      'right',
+    ]);
     const markdown = toTable(tableData, customDelimiter);
 
     expect(markdown).toContain('| ---: | ---: | ---: |');
@@ -59,10 +83,18 @@ describe('Column Alignment Integration', () => {
         ['John', '30', 'Engineer'],
         ['Jane', '25', 'Designer'],
       ],
-      delimiter: [{ alignment: undefined }, { alignment: undefined }, { alignment: undefined }],
+      delimiter: [
+        { alignment: undefined },
+        { alignment: undefined },
+        { alignment: undefined },
+      ],
     };
 
-    const customDelimiter = createDelimiterFromAlignments(['left', 'center', 'right']);
+    const customDelimiter = createDelimiterFromAlignments([
+      'left',
+      'center',
+      'right',
+    ]);
     const markdown = toTable(tableData, customDelimiter);
 
     expect(markdown).toContain('| :--- | :---: | ---: |');
@@ -75,10 +107,18 @@ describe('Column Alignment Integration', () => {
         ['John', '30', 'Engineer'],
         ['Jane', '25', 'Designer'],
       ],
-      delimiter: [{ alignment: undefined }, { alignment: undefined }, { alignment: undefined }],
+      delimiter: [
+        { alignment: undefined },
+        { alignment: undefined },
+        { alignment: undefined },
+      ],
     };
 
-    const customDelimiter = createDelimiterFromAlignments([undefined, undefined, undefined]);
+    const customDelimiter = createDelimiterFromAlignments([
+      undefined,
+      undefined,
+      undefined,
+    ]);
     const markdown = toTable(tableData, customDelimiter);
 
     expect(markdown).toContain('| --- | --- | --- |');
