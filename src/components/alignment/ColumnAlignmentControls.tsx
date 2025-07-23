@@ -10,6 +10,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import type { ColumnAlignment } from '../../utils/table-utils.js';
 
+type ColumnAlignmentSelectValue = ColumnAlignment | '';
+
 interface Props {
   columnNames: string[];
   alignments: ColumnAlignment[];
@@ -40,34 +42,42 @@ export function ColumnAlignmentControls({
       </Typography>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {columnNames.map((columnName, index) => (
-          <FormControl key={index} size="small" fullWidth>
-            <InputLabel id={`alignment-select-${index}-label`}>
-              {columnName}
-            </InputLabel>
-            <Select
-              labelId={`alignment-select-${index}-label`}
-              id={`alignment-select-${index}`}
-              value={alignments[index] || ''}
-              label={columnName}
-              onChange={(event) =>
-                onAlignmentChange(
-                  index,
-                  event.target.value === ''
-                    ? undefined
-                    : (event.target.value as ColumnAlignment),
-                )
-              }
-            >
-              <MenuItem value="">
-                <em>{t('alignmentDefault')}</em>
-              </MenuItem>
-              <MenuItem value="left">{t('alignmentLeft')}</MenuItem>
-              <MenuItem value="center">{t('alignmentCenter')}</MenuItem>
-              <MenuItem value="right">{t('alignmentRight')}</MenuItem>
-            </Select>
-          </FormControl>
-        ))}
+        {columnNames.map((columnName, index) => {
+          const key = String(index) + '-' + columnName;
+
+          return (
+            <FormControl key={key} size="small" fullWidth>
+              <InputLabel id={`alignment-select-${key}-label`}>
+                {columnName}
+              </InputLabel>
+              <Select<ColumnAlignmentSelectValue>
+                labelId={`alignment-select-${key}-label`}
+                id={`alignment-select-${key}`}
+                value={alignments[index] ?? ''}
+                label={columnName}
+                onChange={(event) => {
+                  console.debug('onChange', {
+                    columnIndex: index,
+                    value: event.target.value,
+                  });
+                  onAlignmentChange(
+                    index,
+                    event.target.value === ''
+                      ? undefined
+                      : (event.target.value as ColumnAlignment),
+                  );
+                }}
+              >
+                <MenuItem value="">
+                  <em>{t('alignmentDefault')}</em>
+                </MenuItem>
+                <MenuItem value="left">{t('alignmentLeft')}</MenuItem>
+                <MenuItem value="center">{t('alignmentCenter')}</MenuItem>
+                <MenuItem value="right">{t('alignmentRight')}</MenuItem>
+              </Select>
+            </FormControl>
+          );
+        })}
       </Box>
     </Paper>
   );
