@@ -30,11 +30,12 @@ export function HtmlPreview({ htmlOutput }: Props) {
             border: 1,
             borderColor: 'divider',
             padding: '8px 12px',
-            textAlign: 'left',
+            // textAlign: 'left',
           },
           '& th': {
             backgroundColor: 'action.hover',
             fontWeight: 'bold',
+            textAlign: 'center',
           },
           '& tr:nth-of-type(even)': {
             backgroundColor: 'action.selected',
