@@ -53,7 +53,7 @@ export function ColumnAlignmentControls({
               onChange={(event) =>
                 onAlignmentChange(
                   index,
-                  (event.target.value as ColumnAlignment) || undefined,
+                  event.target.value === '' ? undefined : (event.target.value as ColumnAlignment),
                 )
               }
             >
