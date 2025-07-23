@@ -66,7 +66,7 @@ export function Markdown(props: Props) {
           <Grid size={12}>
             <ColumnAlignmentControls
               columnNames={props.tableData.header}
-              alignments={props.customColumnAlignments || []}
+              alignments={props.customColumnAlignments ?? []}
               onAlignmentChange={props.onAlignmentChange}
             />
           </Grid>
