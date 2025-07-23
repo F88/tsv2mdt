@@ -1,6 +1,7 @@
 import { Grid, useMediaQuery, useTheme } from '@mui/material';
 import type { MarkdownTable } from 'x2md';
 import type { ColumnAlignment } from '../../utils/table-utils.js';
+import { ColumnAlignmentControls } from '../alignment/ColumnAlignmentControls.js';
 import { MarkdownOutput } from './MarkdownOutput.jsx';
 import { MarkdownSummary } from './MarkdownSummary.jsx';
 
@@ -9,6 +10,7 @@ interface Props {
   customColumnAlignments?: ColumnAlignment[];
   handleUpdateMarkdownTable: (newMarkdown: string) => void;
   markdownOutput: string;
+  onAlignmentChange: (columnIndex: number, alignment: ColumnAlignment) => void;
 }
 
 export function Markdown(props: Props) {
@@ -43,7 +45,7 @@ export function Markdown(props: Props) {
           // markdown={markdown}
           tableData={props.tableData}
           maxRows={isSmallDisplay ? 5 : 30}
-          customColumnAlignments={undefined}
+          customColumnAlignments={props.customColumnAlignments}
           handleUpdateMarkdownTable={props.handleUpdateMarkdownTable}
         />
       </Grid>
@@ -54,10 +56,21 @@ export function Markdown(props: Props) {
           md: 3,
         }}
       >
-        <MarkdownSummary
-          tableData={props.tableData}
-          markdownOutput={props.markdownOutput}
-        />
+        <Grid container spacing={2} direction="column">
+          <Grid size={12}>
+            <MarkdownSummary
+              tableData={props.tableData}
+              markdownOutput={props.markdownOutput}
+            />
+          </Grid>
+          <Grid size={12}>
+            <ColumnAlignmentControls
+              columnNames={props.tableData.header}
+              alignments={props.customColumnAlignments ?? []}
+              onAlignmentChange={props.onAlignmentChange}
+            />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

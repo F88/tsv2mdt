@@ -42,8 +42,9 @@ export function convertMarkdownTableToHtml(
   html += '  <tbody>\n';
   markdownTable.data.forEach((row) => {
     html += '    <tr>\n';
-    row.forEach((cell) => {
-      html += `      <td>${escapeHtml(cell)}</td>\n`;
+    row.forEach((cell, index) => {
+      const alignment = markdownTable.delimiter[index]?.alignment ?? 'left';
+      html += `      <td style="text-align: ${alignment}">${escapeHtml(cell)}</td>\n`;
     });
     html += '    </tr>\n';
   });

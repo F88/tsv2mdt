@@ -27,12 +27,12 @@ describe('convertMarkdownTableToHtml', () => {
   </thead>
   <tbody>
     <tr>
-      <td>John</td>
-      <td>30</td>
+      <td style="text-align: left">John</td>
+      <td style="text-align: left">30</td>
     </tr>
     <tr>
-      <td>Jane</td>
-      <td>25</td>
+      <td style="text-align: left">Jane</td>
+      <td style="text-align: left">25</td>
     </tr>
   </tbody>
 </table>`;

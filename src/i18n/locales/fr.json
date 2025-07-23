@@ -40,6 +40,11 @@
     "copy": "Copier",
     "copied": "Copié"
   },
+  "columnAlignment": "Alignement des colonnes",
+  "alignmentDefault": "Par défaut",
+  "alignmentLeft": "Gauche",
+  "alignmentCenter": "Centre",
+  "alignmentRight": "Droite",
   "performanceMetrics": {
     "title": "Métriques de performance",
     "tsvParsingTime": "Temps d'analyse TSV",
