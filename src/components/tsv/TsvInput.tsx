@@ -37,10 +37,14 @@ export function TsvInput({ tsvInput, onChange, maxRows = 10 }: Props) {
           placeholder={t('tsvPlaceholder')}
           variant="outlined"
           sx={{
-            fontFamily: 'monospace',
             whiteSpace: 'nowrap',
-            // wrap: 'none',
-            // nowrap: '',
+          }}
+          slotProps={{
+            input: {
+              style: {
+                fontFamily: 'monospace',
+              },
+            },
           }}
         />
       </Paper>

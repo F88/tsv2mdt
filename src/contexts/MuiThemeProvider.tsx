@@ -52,7 +52,14 @@ export function MuiThemeProvider({ children }: Props) {
           },
         },
         typography: {
-          fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif',
+          fontFamily: [
+            'Audiowide',
+            'monospace',
+            'Playwrite AU NSW',
+            'system-ui',
+            'Arial',
+            'sans-serif',
+          ].join(','),
         },
       }),
     [resolvedTheme],

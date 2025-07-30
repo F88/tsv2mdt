@@ -15,6 +15,7 @@ export function HtmlPreview({ htmlOutput }: Props) {
       </Typography>
       <Box
         sx={{
+          fontFamily: 'system-ui, sans-serif',
           minHeight: 200,
           p: 2,
           border: 1,

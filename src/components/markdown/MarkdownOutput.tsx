@@ -109,9 +109,11 @@ export function MarkdownOutput({
         slotProps={{
           input: {
             readOnly: true,
+            style: {
+              fontFamily: 'monospace',
+            },
           },
         }}
-        sx={{ fontFamily: 'monospace' }}
       />
     </Paper>
   );
