@@ -95,7 +95,7 @@ export function TsvConverterContainer() {
   };
 
   const handleLoadSample = () => {
-    // Firestore analytics event for loading sample data
+    // Firebase Analytics event for loading sample data
     logEvent(analytics, 'select_content', {
       content_type: 'event',
       item_id: 'load-example',
