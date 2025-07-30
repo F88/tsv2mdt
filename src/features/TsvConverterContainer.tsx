@@ -11,6 +11,9 @@ import { convertMarkdownTableToHtml } from '../utils/tsv-converter.js';
 import type { ColumnAlignment } from '../utils/table-utils.js';
 import { Actions } from './Actions.jsx';
 
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../utils/firebase-utils.ts';
+
 export function TsvConverterContainer() {
   const [tsvInput, setTsvInput] = useState('');
   const [indexOfExamples, setIndexOfExamples] = useState<number>(0);
@@ -62,6 +65,13 @@ export function TsvConverterContainer() {
   }, [markdown, tableData]);
 
   const handleClearAll = () => {
+    // Firestore analytics event for clearing all
+    logEvent(analytics, 'select_content', {
+      content_type: 'event',
+      item_id: 'clear-all',
+    });
+
+    // Reset all states
     setTsvInput('');
     setTableData({
       header: [],
@@ -85,6 +95,13 @@ export function TsvConverterContainer() {
   };
 
   const handleLoadSample = () => {
+    // Firestore analytics event for loading sample data
+    logEvent(analytics, 'select_content', {
+      content_type: 'event',
+      item_id: 'load-example',
+    });
+
+    // Select a random sample data from ExampleData
     const sampleDataArray = ExampleData;
     const randomIndex = Math.floor(Math.random() * sampleDataArray.length);
     setIndexOfExamples((prevState) => {
