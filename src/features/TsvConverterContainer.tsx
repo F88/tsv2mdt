@@ -70,7 +70,7 @@ export function TsvConverterContainer() {
 
   const handleClearAll = () => {
     // Firebase Analytics event for clearing all
-    logEvent(analytics, 'select_content', {
+    logEvent(analytics, 'clear_data', {
       content_type: 'event',
       item_id: 'clear-all',
     });
