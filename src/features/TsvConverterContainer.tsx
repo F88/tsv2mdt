@@ -11,6 +11,9 @@ import { convertMarkdownTableToHtml } from '../utils/tsv-converter.js';
 import type { ColumnAlignment } from '../utils/table-utils.js';
 import { Actions } from './Actions.jsx';
 
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../utils/firebase-utils.ts';
+
 export function TsvConverterContainer() {
   const [tsvInput, setTsvInput] = useState('');
   const [indexOfExamples, setIndexOfExamples] = useState<number>(0);
@@ -61,7 +64,18 @@ export function TsvConverterContainer() {
     }
   }, [markdown, tableData]);
 
+  const handleUpdateMarkdownTable = (data: string) => {
+    setMarkdown(data);
+  };
+
   const handleClearAll = () => {
+    // Firebase Analytics event for clearing all
+    logEvent(analytics, 'clear_data', {
+      content_type: 'event',
+      item_id: 'clear-all',
+    });
+
+    // Reset all states
     setTsvInput('');
     setTableData({
       header: [],
@@ -85,6 +99,13 @@ export function TsvConverterContainer() {
   };
 
   const handleLoadSample = () => {
+    // Firebase Analytics event for loading sample data
+    logEvent(analytics, 'load_sample', {
+      content_type: 'event',
+      item_id: 'load-example',
+    });
+
+    // Select a random sample data from ExampleData
     const sampleDataArray = ExampleData;
     const randomIndex = Math.floor(Math.random() * sampleDataArray.length);
     setIndexOfExamples((prevState) => {
@@ -119,9 +140,7 @@ export function TsvConverterContainer() {
         <Markdown
           tableData={tableData}
           customColumnAlignments={columnAlignments}
-          handleUpdateMarkdownTable={(newMarkdown) => {
-            setMarkdown(newMarkdown);
-          }}
+          handleUpdateMarkdownTable={handleUpdateMarkdownTable}
           markdownOutput={markdown}
           onAlignmentChange={handleAlignmentChange}
         />
