@@ -109,7 +109,7 @@ describe('TsvConverterContainer', () => {
     cleanup();
   });
 
-  // 初期表示内容のテスト
+  // Tests for initial display content
   describe('initial render', () => {
     it('renders all main UI components', () => {
       render(<TsvConverterContainer />);
