@@ -100,7 +100,7 @@ export function TsvConverterContainer() {
 
   const handleLoadSample = () => {
     // Firebase Analytics event for loading sample data
-    logEvent(analytics, 'select_content', {
+    logEvent(analytics, 'load_sample', {
       content_type: 'event',
       item_id: 'load-example',
     });
