@@ -140,8 +140,11 @@ describe('TsvConverterContainer', () => {
       );
       expect(vi.mocked(firebaseAnalytics.logEvent)).toHaveBeenCalledWith(
         expect.anything(),
-        'select_content',
-        expect.objectContaining({ item_id: 'load-example' }),
+        'load_sample',
+        {
+          content_type: 'event',
+          item_id: 'load-example',
+        },
       );
     });
 
@@ -178,8 +181,11 @@ describe('TsvConverterContainer', () => {
       expect(screen.getByTestId('markdown-output')).toHaveTextContent('');
       expect(vi.mocked(firebaseAnalytics.logEvent)).toHaveBeenCalledWith(
         expect.anything(),
-        'select_content',
-        expect.objectContaining({ item_id: 'clear-all' }),
+        'clear_data',
+        {
+          content_type: 'event',
+          item_id: 'clear-all',
+        },
       );
     });
   });
@@ -301,11 +307,11 @@ describe('TsvConverterContainer', () => {
 
       expect(vi.mocked(firebaseAnalytics.logEvent)).toHaveBeenCalledWith(
         expect.anything(),
-        'select_content',
-        expect.objectContaining({
+        'load_sample',
+        {
           content_type: 'event',
           item_id: 'load-example',
-        }),
+        },
       );
     });
 
@@ -315,11 +321,11 @@ describe('TsvConverterContainer', () => {
 
       expect(vi.mocked(firebaseAnalytics.logEvent)).toHaveBeenCalledWith(
         expect.anything(),
-        'select_content',
-        expect.objectContaining({
+        'clear_data',
+        {
           content_type: 'event',
           item_id: 'clear-all',
-        }),
+        },
       );
     });
   });
