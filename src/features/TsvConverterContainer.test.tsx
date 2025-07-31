@@ -259,7 +259,6 @@ describe('TsvConverterContainer', () => {
 
       // Should have empty HTML output on error since the component catches the error
       expect(screen.getByTestId('html-output')).toBeEmptyDOMElement();
-      screen.debug();
     });
   });
 
