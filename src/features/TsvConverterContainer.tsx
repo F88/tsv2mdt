@@ -64,6 +64,10 @@ export function TsvConverterContainer() {
     }
   }, [markdown, tableData]);
 
+  const handleUpdateMarkdownTable = (data: string) => {
+    setMarkdown(data);
+  };
+
   const handleClearAll = () => {
     // Firebase Analytics event for clearing all
     logEvent(analytics, 'select_content', {
@@ -136,9 +140,7 @@ export function TsvConverterContainer() {
         <Markdown
           tableData={tableData}
           customColumnAlignments={columnAlignments}
-          handleUpdateMarkdownTable={(newMarkdown) => {
-            setMarkdown(newMarkdown);
-          }}
+          handleUpdateMarkdownTable={handleUpdateMarkdownTable}
           markdownOutput={markdown}
           onAlignmentChange={handleAlignmentChange}
         />
